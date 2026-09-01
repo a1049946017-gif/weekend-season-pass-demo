@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>周末福利季卡｜活动原型</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="stage" aria-label="周末福利季卡活动交互原型">
+      <section id="entryScreen" class="screen entry-screen active" aria-label="活动入口">
+        <button id="entryButton" class="entry-new" type="button" aria-label="打开周末福利季卡">
+          <span class="entry-title">周末福利季卡</span>
+          <span class="entry-subtitle">超高返利 · 周末登录领</span>
+        </button>
+        <div class="entry-tip">点击新增活动入口进入原型 →</div>
+        <div class="prototype-badge">交互原型 · 1600 × 900</div>
+      </section>
+
+      <section id="passScreen" class="screen pass-screen" aria-label="周末福利季卡详情">
+        <header class="topbar">
+          <button id="backButton" class="back-button" type="button" aria-label="返回活动入口"><span>←</span></button>
+          <nav class="top-tabs" aria-label="活动页签">
+            <div class="top-tab">百货贵宾</div>
+            <div class="top-tab active">周末福利季卡</div>
+            <div class="top-tab">推荐橱窗</div>
+          </nav>
+          <div class="wallet" aria-label="玩家资源">
+            <div class="wallet-item"><span class="resource-icon gold">◆</span><span id="goldWallet" class="wallet-value">1030</span><span>＋</span></div>
+            <div class="wallet-item"><span class="resource-icon energy">⚡</span><span id="energyWallet" class="wallet-value">220</span><span>＋</span></div>
+          </div>
+        </header>
+
+        <aside class="side-nav" aria-label="活动分类">
+          <div class="side-item active">福利季卡</div>
+          <div class="side-item">推荐</div>
+          <div class="side-item">礼包</div>
+          <div class="side-item">兑换</div>
+          <div class="side-item">时装</div>
+          <div class="side-item">充值</div>
+        </aside>
+
+        <section class="main-panel">
+          <article class="hero-card">
+            <div class="season-mark">
+              <div class="season-eyebrow">WEEKEND BENEFIT PASS</div>
+              <div class="season-title">周末福利<br><strong>季卡</strong></div>
+              <div class="season-copy">一次购买，周末长线返还<br>三档可独立购买，也可全部拥有</div>
+            </div>
+            <div class="calendar-art" aria-hidden="true">
+              <div class="sun-disc"></div>
+              <div class="ticket-stack">连续 13 个周末<strong>登录即领</strong></div>
+            </div>
+            <div id="tierSwitcher" class="tier-switcher" aria-label="季卡档位"></div>
+            <div class="hero-bottom">
+              <div id="heroReward" class="hero-reward"></div>
+              <button id="buyButton" class="buy-button" type="button"></button>
+            </div>
+          </article>
+
+          <article class="ledger">
+            <div class="ledger-header">
+              <div>
+                <div class="ledger-title">周末奖励日历</div>
+                <div class="ledger-meta">售卖期：2027.01.14—2027.02.05　｜　每个周末仅可领取 1 次</div>
+              </div>
+              <label class="time-control">原型时间
+                <select id="timeSelect" class="time-select" aria-label="切换原型时间"></select>
+              </label>
+            </div>
+            <div id="tierSummary" class="tier-summary"></div>
+            <button id="claimAllButton" class="claim-all" type="button">本周暂无可领取奖励</button>
+            <div id="weekList" class="week-list" aria-label="周末奖励列表"></div>
+          </article>
+        </section>
+
+        <button id="rulesButton" class="rules-button" type="button">活动规则</button>
+        <div id="rulesModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="rulesTitle">
+          <div class="modal-card">
+            <button id="modalClose" class="modal-close" type="button" aria-label="关闭">×</button>
+            <h2 id="rulesTitle">周末福利季卡规则</h2>
+            <ol>
+              <li>活动售卖时间为2027年1月14日至2027年2月5日，三个档位可分别购买且可全部购买。</li>
+              <li>购买成功后立即发放对应即时奖励；即时奖励不占用周末奖励次数。</li>
+              <li>2027年2月6日至2027年5月2日期间共开放13个周末领取窗口，同一档位每周末仅可领取一次。</li>
+              <li>未在当周领取的奖励不补发；购买截止后未购买的档位不可再补购。</li>
+              <li>原型按北京时间演示，正式服时间以游戏内公告和服务器刷新时间为准。</li>
+            </ol>
+          </div>
+        </div>
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
